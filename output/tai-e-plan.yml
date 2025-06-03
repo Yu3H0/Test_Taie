@@ -1,0 +1,28 @@
+- id: pta
+  options:
+    cs: ci
+    only-app: false
+    implicit-entries: false
+    distinguish-string-constants: app
+    merge-string-objects: true
+    merge-string-builders: true
+    merge-exception-objects: true
+    handle-invokedynamic: false
+    propagate-types:
+    - reference
+    - int
+    - long
+    - double
+    - char
+    - float
+    advanced: null
+    dump: false
+    dump-ci: false
+    dump-yaml: false
+    expected-file: null
+    reflection-inference: string-constant
+    reflection-log: null
+    taint-config: android-benchmarks/taint-config-micro.yml
+    taint-interactive-mode: false
+    plugins: []
+    time-limit: -1

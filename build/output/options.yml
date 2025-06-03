@@ -1,0 +1,22 @@
+optionsFile: null
+printHelp: false
+classPath: []
+appClassPath: []
+mainClass: null
+inputClasses: []
+androidJars: null
+javaVersion: 6
+prependJVM: false
+allowPhantom: false
+androidMode: false
+worldBuilderClass: pascal.taie.frontend.soot.SootWorldBuilder
+outputDir: output
+preBuildIR: false
+worldCacheMode: false
+scope: APP
+nativeModel: true
+planFile: null
+analyses: {}
+onlyGenPlan: false
+keepResult:
+- $KEEP-ALL

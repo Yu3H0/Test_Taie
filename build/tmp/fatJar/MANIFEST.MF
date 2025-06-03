@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: pascal.taie.Main
+Tai-e-Commit: Unknown
+

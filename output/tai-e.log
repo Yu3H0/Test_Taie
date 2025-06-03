@@ -1,0 +1,134 @@
+Writing log to D:\Tools\PacDroid-artifact\PacDroid-source\output\tai-e.log
+java.version: 17.0.11
+java.version.date: 2024-04-16
+java.runtime.version: 17.0.11+9-LTS
+java.vendor: Amazon.com Inc.
+java.vendor.version: Corretto-17.0.11.9.1
+os.name: Windows 11
+os.version: 10.0
+os.arch: amd64
+Tai-e Version: 0.5.1-SNAPSHOT
+Failed to read Git commit hash: java.nio.file.NoSuchFileException: .git\HEAD
+Tai-e Commit: Unknown
+Writing analysis plan to D:\Tools\PacDroid-artifact\PacDroid-source\output\tai-e-plan.yml
+WorldBuilder starts ...
+Warning: main class was not given!
+10558 classes with 108001 methods in the world
+WorldBuilder finishes, elapsed time: 4.04s
+pta starts ...
+Loading taint config from D:\Tools\PacDroid-artifact\PacDroid-source\android-benchmarks\taint-config-micro.yml
+Cannot find source method '<android.location.Location: double getLatitude()>'
+Cannot find source method '<android.location.Location: double getLongitude()>'
+Cannot find source method '<android.widget.EditText: android.text.Editable getText()>'
+Cannot find sink method '<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>'
+Cannot find sink method '<org.apache.http.client.HttpClient: org.apache.http.HttpResponse execute(org.apache.http.client.methods.HttpUriRequest)>'
+Cannot find taint-transfer method '<org.apache.http.entity.StringEntity: void <init>(java.lang.String)>'
+Cannot find taint-transfer method '<org.apache.http.client.methods.HttpPost: void setEntity(org.apache.http.HttpEntity)>'
+Cannot find taint-transfer method '<android.graphics.PointF: void <init>(float,float)>'
+Cannot find taint-transfer method '<android.graphics.PointF: void <init>(float,float)>'
+TaintConfig:
+sources:
+  CallSource{<android.telephony.TelephonyManager: java.lang.String getImei()>/result(java.lang.String)}
+  CallSource{<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/result(java.lang.String)}
+  CallSource{<android.telephony.TelephonyManager: java.lang.String getSubscriberId()>/result(java.lang.String)}
+  CallSource{<android.telephony.TelephonyManager: java.lang.String getSimSerialNumber()>/result(java.lang.String)}
+
+sinks:
+  <android.util.Log: int i(java.lang.String,java.lang.String)>/1
+  <android.util.Log: int d(java.lang.String,java.lang.String)>/1
+  <android.util.Log: int v(java.lang.String,java.lang.String)>/1
+  <android.util.Log: int e(java.lang.String,java.lang.String)>/1
+  <java.net.URL: java.net.URLConnection openConnection()>/base
+  <java.lang.ProcessBuilder: java.lang.Process start()>/base
+  <java.io.OutputStreamWriter: java.io.Writer append(java.lang.CharSequence)>/0
+  <java.io.Writer: java.io.Writer append(java.lang.CharSequence)>/0
+
+transfers:
+  <java.lang.String: java.lang.String concat(java.lang.String)>: base -> result(java.lang.String)
+  <java.lang.String: java.lang.String concat(java.lang.String)>: 0 -> result(java.lang.String)
+  <java.lang.String: void <init>(char[])>: 0 -> base(java.lang.String)
+  <java.lang.String: void getChars(int,int,char[],int)>: base -> 2(char[])
+  <java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>: 0 -> base(java.lang.StringBuffer)
+  <java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>: 0 -> result(java.lang.StringBuffer)
+  <java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>: base -> result(java.lang.StringBuffer)
+  <java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>: 0 -> base(java.lang.StringBuffer)
+  <java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>: 0 -> result(java.lang.StringBuffer)
+  <java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>: base -> result(java.lang.StringBuffer)
+  <java.lang.StringBuffer: java.lang.String toString()>: base -> result(java.lang.String)
+  <java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>: 0 -> base(java.lang.StringBuilder)
+  <java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>: 0 -> result(java.lang.StringBuilder)
+  <java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>: base -> result(java.lang.StringBuilder)
+  <java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>: 0 -> base(java.lang.StringBuilder)
+  <java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>: 0 -> result(java.lang.StringBuilder)
+  <java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>: base -> result(java.lang.StringBuilder)
+  <java.lang.StringBuilder: java.lang.String toString()>: base -> result(java.lang.String)
+  <java.lang.StringBuilder: java.lang.StringBuilder append(double)>: 0 -> base(java.lang.StringBuilder)
+  <java.lang.StringBuilder: java.lang.StringBuilder append(double)>: 0 -> result(java.lang.StringBuilder)
+  <java.lang.StringBuilder: java.lang.StringBuilder append(double)>: base -> result(java.lang.StringBuilder)
+  <java.lang.StringBuilder: java.lang.StringBuilder append(float)>: 0 -> base(java.lang.StringBuilder)
+  <java.lang.StringBuilder: java.lang.StringBuilder append(float)>: 0 -> result(java.lang.StringBuilder)
+  <java.lang.StringBuilder: java.lang.StringBuilder append(float)>: base -> result(java.lang.StringBuilder)
+  <java.lang.StringBuilder: java.lang.StringBuilder append(char)>: 0 -> base(java.lang.StringBuilder)
+  <java.lang.StringBuilder: java.lang.StringBuilder append(char)>: 0 -> result(java.lang.StringBuilder)
+  <java.lang.StringBuilder: java.lang.StringBuilder append(char)>: base -> result(java.lang.StringBuilder)
+  <java.lang.StringBuilder: java.lang.StringBuilder append(int)>: 0 -> base(java.lang.StringBuilder)
+  <java.lang.StringBuilder: java.lang.StringBuilder append(int)>: 0 -> result(java.lang.StringBuilder)
+  <java.lang.StringBuilder: java.lang.StringBuilder append(int)>: base -> result(java.lang.StringBuilder)
+  <java.lang.Double: java.lang.String toString(double)>: 0 -> result(java.lang.String)
+  <java.lang.ProcessBuilder: java.lang.ProcessBuilder command(java.lang.String[])>: 0 -> base(java.lang.ProcessBuilder)
+  <java.lang.ProcessBuilder: java.lang.ProcessBuilder command(java.lang.String[])>: 0 -> result(java.lang.ProcessBuilder)
+  <java.lang.ProcessBuilder: java.lang.ProcessBuilder command(java.lang.String[])>: base -> result(java.lang.ProcessBuilder)
+  <java.net.URL: void <init>(java.lang.String)>: 0 -> base(java.net.URL)
+  <java.lang.Integer: int parseInt(java.lang.String)>: 0 -> result(int)
+  <java.lang.Long: long parseLong(java.lang.String)>: 0 -> result(long)
+  <java.lang.CharSequence: java.lang.String toString()>: base -> result(java.lang.String)
+  <java.lang.String: java.lang.String valueOf(double)>: 0 -> result(java.lang.String)
+  <java.lang.Float: java.lang.Float valueOf(java.lang.String)>: 0 -> result(java.lang.Float)
+  <java.lang.String: byte[] getBytes()>: base -> result[*](byte)
+  <java.util.Formatter: java.util.Formatter format(java.lang.String,java.lang.Object[])>: 1[*] -> base(java.util.Formatter)
+  <java.util.Formatter: void <init>(java.lang.Appendable)>: base -> 0(java.lang.Appendable)
+  <java.lang.ProcessBuilder: java.lang.ProcessBuilder command(java.lang.String[])>: 0[*] -> base(java.lang.ProcessBuilder)
+  <java.lang.Float: float floatValue()>: base -> result(float)
+  <java.lang.StringBuilder: java.lang.String substring(int,int)>: base -> result(java.lang.String)
+  <java.lang.String: java.lang.String substring(int)>: base -> result(java.lang.String)
+  <java.lang.String: java.lang.String substring(int,int)>: base -> result(java.lang.String)
+  <java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)>: 0 -> result(java.util.regex.Matcher)
+  <java.util.regex.Matcher: java.lang.String group(int)>: base -> result(java.lang.String)
+  <java.lang.String: void getChars(int,int,char[],int)>: base -> 2[*](char)
+  <java.lang.StringBuilder: void getChars(int,int,char[],int)>: base -> 2[*](char)
+  <java.io.ByteArrayOutputStream: void write(byte[],int,int)>: 0[*] -> base(java.io.ByteArrayOutputStream)
+  <java.io.ByteArrayOutputStream: java.lang.String toString()>: base -> result(java.lang.String)
+  <java.lang.Object: java.lang.String toString()>: base -> result(java.lang.String)
+
+sanitizers:
+  ParamSanitizer{<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>/base}
+  ParamSanitizer{<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>/base}
+  ParamSanitizer{<java.lang.StringBuilder: java.lang.StringBuilder append(double)>/base}
+  ParamSanitizer{<java.lang.StringBuilder: java.lang.StringBuilder append(float)>/base}
+  ParamSanitizer{<java.lang.StringBuilder: java.lang.StringBuilder append(char)>/base}
+  ParamSanitizer{<java.lang.StringBuilder: java.lang.StringBuilder append(int)>/base}
+  ParamSanitizer{<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>/base}
+  ParamSanitizer{<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>/base}
+
+[Pointer analysis] elapsed time: 0.16s
+Detected 1 taint flow(s):
+TaintFlow{<pascal.taie.icc_second_start.InFlowActivity: void onCreate(android.os.Bundle)>[5@L14] $r6 = invokevirtual r5.getDeviceId()/result -> <pascal.taie.icc_second_start.InFlowReceiver: void onReceive(android.content.Context,android.content.Intent)>[3@L11] invokestatic android.util.Log.d(%stringconst1, $r3)/1}
+TFGDumper starts ...
+Source nodes:
+VarNode{<pascal.taie.icc_second_start.InFlowActivity: void onCreate(android.os.Bundle)>/$r6}
+Sink nodes:
+VarNode{<pascal.taie.icc_second_start.InFlowReceiver: void onReceive(android.content.Context,android.content.Intent)>/$r3}
+Dumping D:\Tools\PacDroid-artifact\PacDroid-source\output\taint-flow-graph.dot
+TFGDumper finishes, elapsed time: 0.02s
+-------------- Pointer analysis statistics: --------------
+#var pointers:                137 (insens) / 137 (sens)
+#objects:                     30 (insens) / 30 (sens)
+#var points-to:               150 (insens) / 150 (sens)
+#static field points-to:      11 (sens)
+#instance field points-to:    4 (sens)
+#array points-to:             0 (sens)
+#reachable methods:           50 (insens) / 50 (sens)
+#call graph edges:            68 (insens) / 68 (sens)
+----------------------------------------
+pta finishes, elapsed time: 0.47s
+Tai-e finishes, elapsed time: 4.73s

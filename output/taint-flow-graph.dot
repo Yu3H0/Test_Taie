@@ -1,0 +1,7 @@
+digraph G {
+  node [];
+  edge [];
+  "VarNode{<pascal.taie.icc_second_start.InFlowActivity: void onCreate(android.os.Bundle)>/$r6}" [fillcolor=gold,shape=doubleoctagon,style=filled];
+  "VarNode{<pascal.taie.icc_second_start.InFlowReceiver: void onReceive(android.content.Context,android.content.Intent)>/$r3}" [fillcolor=deepskyblue,shape=doubleoctagon,style=filled];
+  "VarNode{<pascal.taie.icc_second_start.InFlowActivity: void onCreate(android.os.Bundle)>/$r6}" -> "VarNode{<pascal.taie.icc_second_start.InFlowReceiver: void onReceive(android.content.Context,android.content.Intent)>/$r3}" [color=green3,style=dashed];
+}

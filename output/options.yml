@@ -1,0 +1,23 @@
+optionsFile: null
+printHelp: false
+classPath:
+- ../example.apk
+appClassPath: []
+mainClass: null
+inputClasses: []
+javaVersion: 11
+prependJVM: true
+allowPhantom: true
+androidMode: true
+worldBuilderClass: pascal.taie.frontend.soot.SootWorldBuilder
+outputDir: output
+preBuildIR: false
+worldCacheMode: false
+scope: APP
+nativeModel: true
+planFile: null
+analyses:
+  pta: taint-config:android-benchmarks/taint-config-micro.yml;
+onlyGenPlan: false
+keepResult:
+- $KEEP-ALL
